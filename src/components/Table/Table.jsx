@@ -6,15 +6,15 @@ import { useState } from "react";
 
 const Table = () => {
     const [showModal, setShowModal] = useState(false);
-
+    const [spinning, setSpinning] = useState(false);
     const startSpinning = () => {
-        alert('spinning')
+        setSpinning(true)
         setTimeout(() => {
             // Math.floor(Math.random() * 10) + 1;
-           
+            setSpinning(false);
             setShowModal(true);
         }, 10000);
-        
+
     };
     return (
         <div>
@@ -136,6 +136,15 @@ const Table = () => {
                     </div>
                 </div>
             </div>
+            {
+                spinning ? 
+                    <button type="button" className="flex items-center justify-center" disabled>
+                        <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
+                        
+                    </button>
+                    : ""
+                
+            }
             {showModal ? (
                 <div>
                     <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -222,7 +231,7 @@ const Table = () => {
 
 
 
-           
+
 
         </div >
 
