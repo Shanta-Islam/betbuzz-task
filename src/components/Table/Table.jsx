@@ -6,6 +6,15 @@ import { useState } from "react";
 
 const Table = () => {
     const [showModal, setShowModal] = useState(false);
+
+    const startSpinning = () => {
+        setTimeout(() => {
+            Math.floor(Math.random() * 10) + 1;
+            alert('spinning')
+            setShowModal(true);
+        }, 10000);
+        
+    };
     return (
         <div>
             <div className="px-4">
@@ -30,8 +39,11 @@ const Table = () => {
 
                                     </select>
                                 </div>
-                                <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                                {/* <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                                     <button className="bg-gray-800 text-yellow-400 active:bg-indigo-600 text-xs font-bold uppercase px-3 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 flex justify-end float-right" type="button" onClick={() => setShowModal(true)}><FaRegUser></FaRegUser>Add User</button>
+                                </div> */}
+                                <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                                    <button className="bg-gray-800 text-yellow-400 active:bg-indigo-600 text-xs font-bold uppercase px-3 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 flex justify-end float-right" type="button" onClick={startSpinning}><FaRegUser></FaRegUser>Add User</button>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +121,7 @@ const Table = () => {
                                             </span>
 
                                         </td>
-                                        <td className=" px-6 flex gap-2 items-center justify-center my-auto border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <td className=" flex gap-2 items-center justify-center my-auto border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                             <button className="bg-gray-300 p-1"><FcSettings></FcSettings></button>
                                             <button className="bg-gray-300 p-1"><FaRegUser></FaRegUser></button>
                                             <button className="bg-gray-300 p-1"><FaClock ></FaClock ></button>
@@ -157,31 +169,31 @@ const Table = () => {
                                             <label className="block text-black text-sm font-bold mb-1">
                                                 Email Address
                                             </label>
-                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter Email"/>
+                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter Email" />
                                         </div>
                                         <div className="flex items-center">
                                             <label className="block text-black text-sm font-bold mb-1">
                                                 User Name
                                             </label>
-                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter UserName"/>
+                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter UserName" />
                                         </div>
                                         <div className="flex items-center">
                                             <label className="block text-black text-sm font-bold mb-1">
                                                 Full Name
                                             </label>
-                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter FullName"/>
+                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter FullName" />
                                         </div>
                                         <div className="flex items-center">
                                             <label className="block text-black text-sm font-bold mb-1">
                                                 Password
                                             </label>
-                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter Password"/>
+                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter Password" />
                                         </div>
                                         <div className="flex items-center">
                                             <label className="block text-black text-sm font-bold mb-1">
                                                 Confirm Password
                                             </label>
-                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter Confirm Password"/>
+                                            <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" placeholder="Enter Confirm Password" />
                                         </div>
                                     </form>
                                 </div>
@@ -207,6 +219,9 @@ const Table = () => {
                 </div>
             ) : null}
 
+
+
+           
 
         </div >
 
