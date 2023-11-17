@@ -8,9 +8,10 @@ const Table = () => {
     const [showModal, setShowModal] = useState(false);
 
     const startSpinning = () => {
+        alert('spinning')
         setTimeout(() => {
-            Math.floor(Math.random() * 10) + 1;
-            alert('spinning')
+            // Math.floor(Math.random() * 10) + 1;
+           
             setShowModal(true);
         }, 10000);
         
